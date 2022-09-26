@@ -1,0 +1,50 @@
+//用于jar发布
+apply plugin: 'maven-publish'
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    archiveClassifier = 'javadoc'
+}
+
+afterEvaluate { project ->
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = POM_GROUP_ID
+                artifactId = POM_ARTIFACT_ID
+                version = POM_VERSION
+                //如果是war包填写components.web，如果是jar包填写components.java, aar components.release
+                from components.java
+                artifact sourcesJar
+                artifact javadocJar
+            }
+        }
+        repositories {
+            maven {
+                name = "release"
+                url = "https://android3.weizhipin.com/nexus/content/repositories/releases/"
+                credentials {
+                    username = "admin"
+                    password = "admin@kanzhun"
+                }
+            }
+            maven {
+                name = "snapshot"
+                url = "https://android3.weizhipin.com/nexus/content/repositories/snapshots/"
+                credentials {
+                    username = "admin"
+                    password = "admin@kanzhun"
+                }
+            }
+            maven {
+                name = "project"
+                url = uri("../.local")
+            }
+        }
+    }
+}

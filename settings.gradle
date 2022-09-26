@@ -1,0 +1,3 @@
+rootProject.name = "PluginTest"
+includeBuild("./plugins")
+include ':app'
