@@ -3,15 +3,12 @@
 buildscript {
     ext.kotlin_version = "1.5.20"
     repositories {
-        maven {url 'https://maven.aliyun.com/repository/public/'}
         maven { url "https://android3.weizhipin.com/nexus/repository/public/" }
+        maven {url 'https://maven.aliyun.com/repository/public/'}
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.2"
+        classpath "com.android.tools.build:gradle:7.0.4"
 //        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 plugins {
@@ -21,8 +18,8 @@ plugins {
 }
 allprojects {
     repositories {
-        maven {url 'https://maven.aliyun.com/repository/public/'}
         maven { url "https://android3.weizhipin.com/nexus/repository/public/" }
+        maven {url 'https://maven.aliyun.com/repository/public/'}
     }
     tasks.withType(JavaCompile).configureEach { task ->
         task.options.encoding = 'UTF-8'
@@ -40,14 +37,4 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-ext {
-    appVersionCode = 1001000
-    appVersionName = "10.010"
-    appShowVersionName = "10.010_beta3"
-    isPrintLog = true
-    serverConfig = 1
-    channelString ="0"
-    minifyEnable = false
 }

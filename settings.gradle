@@ -1,3 +1,4 @@
-rootProject.name = "PluginTest"
+rootProject.name = "GradlePluginTemplate"
 includeBuild("./plugins")
 include ':app'
+include ':lib_demo'

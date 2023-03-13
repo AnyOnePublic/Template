@@ -1,4 +1,4 @@
-package com.plugins;
+package com.bzl;
 
 
 public class Test {

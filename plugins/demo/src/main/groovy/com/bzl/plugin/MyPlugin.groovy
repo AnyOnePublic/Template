@@ -1,4 +1,4 @@
-package com.plugins.plugin
+package com.bzl.plugin
 
 
 import org.gradle.api.Plugin
