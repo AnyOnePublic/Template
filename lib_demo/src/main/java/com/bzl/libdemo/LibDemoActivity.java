@@ -1,10 +1,8 @@
 package com.bzl.libdemo;
 
-import com.bzl.libdemo.R;
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 
 public class LibDemoActivity extends AppCompatActivity {

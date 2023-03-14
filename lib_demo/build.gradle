@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.bzl.plugins.publish'
 
-apply from: "../gradle/maven-publish.gradle"
 android {
     compileSdk 30
 
